@@ -1,3 +1,12 @@
+/*
+ * @Autor: za-wangxuezhong
+ * @Date: 2020-11-09 21:04:31
+ * @LastEditors: za-wangxuezhong
+ * @LastEditTime: 2020-11-09 21:15:08
+ * @Description:
+ * @ToDo:
+ * @JiraID: SOMPO-
+ */
 // nodejs服务器
 const express = require("express");
 const Vue = require("vue");
@@ -28,6 +37,15 @@ app.get("*", async (req, res) => {
       }
 
     const html = await renderer.renderToString(context);
+    //   const ssrStream = renderer.renderToStream(context);
+    //   const buffers = [];
+    //   ssrStream.on('data', (data,err)=> {
+    //       buffers.push(data)
+    //   })
+    //   ssrStream.on('end', ()=> {
+    //       res.on(buffers);
+    //   })
+
     // eslint-disable-next-line no-console
     console.log(html);
     res.send(html);
